@@ -53,7 +53,7 @@ ___
 np.:  
 ```![Zimowa góra.](/basic-preset-image.jpg)```
 
-![Tekst alternatywny opisujący obraz, który jest wyświetlany, gdy obraz nie może zostać załadowany.](/basic-preset-image.jpg)
+![Tekst alternatywny opisujący obraz, który jest wyświetlany, gdy obraz nie może zostać załadowany.](basic-preset-image.jpg)
 
 ___
 
