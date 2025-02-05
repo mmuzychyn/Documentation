@@ -1,17 +1,77 @@
+:root{
+    /* Główne kolory */
+    --body-background-color: #000;
+    --body-color: #a9a195;
+
+    --header-background-color: #333;
+    --header-color: #ed7c7c;
+
+    --nav-background-color: #444;
+    --nav-color: #dbdbdb;
+    --nav-active-background-color: #4f3030;
+    --nav-active-border-color: #cf4c4c;
+    --nav-active-hover-color: #f84848;
+    --nav-hover-color: #f84848;
+    --nav-module-color: #d89d9d;
+    --nav-details-summary-color: #f84848;;
+
+    --content-background-color: #181818;
+    --content-border-color: #633232;
+    --content-details-summary-color: #d96262;
+
+    --footer-background-color: #333;
+    --footer-color: #fff;
+
+    /* Kolory podpowiedzi */
+    --hint-text-color: #d9d9d9;
+
+    --hint-info-background-color: #254c70;
+    --hint-info-border-color: #2196F3;
+
+    --hint-success-background-color: #2e4e20;
+    --hint-success-border-color: #4CAF50;
+
+    --hint-warning-background-color: #6e6431;
+    --hint-warning-border-color: #ff9800;
+
+    --hint-danger-background-color: #521a1a;
+    --hint-danger-border-color: #f44336;
+
+    /* Kolory kodu */
+    --code-background-color: #272b3b;
+    --code-color: #d1d1d1;
+    /* Kolory przycisku kopiuj kod */
+    --copy-button-background-color: #333;
+    --copy-button-color: #fff;
+
+    /* Kolory tabel */
+    --table-background-color: #333;
+    --table-color: #d9d9d9;
+    --table-header-background-color: #444;
+    --table-header-color: #d9d9d9;
+    --table-border-color: #633232;
+
+    /* Kolory zakładek */
+    --tabs-background-color: #252525;
+    --tabs-border-color: #75716b;
+
+
+}
+
 body, html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: #a9a195;
+    background-color: var(--body-background-color);
+    color: var(--body-color);
     font-size: 16px;
 }
 
 header {
     display: flex;
     align-items: center;
-    background-color: #333;
-    color: #ed7c7c;
+    background-color: var(--header-background-color);
+    color: var(--header-color);
     position: fixed;
     width: 100%;
     z-index: 2;
@@ -28,36 +88,31 @@ header img {
     height: 60px;
     position: relative;
 }
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: auto;
-}
-
 .container {
     display: flex;
     min-height: calc(100vh - 120px);
 }
 
-nav.sidebar {
-    right: 0;
-    background: transparent;
+main {
+    position: relative;
+    left: 17%;
+    width: 60%;
 }
 
-.indent-h2 {
-    margin-left: 20px;
+footer {
+    background-color: var(--footer-background-color);
+    color: var(--footer-color);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    top: 50px;
+    width: 100%;
 }
-
-.indent-h3 {
-    margin-left: 40px;
-}
-
+    
 nav {
     width: 13%;
-    background-color: #444;
-    color: #dbdbdb;
+    background-color: var(--nav-background-color);
+    color: var(--nav-color);
     padding: 20px;
     height: calc(100vh - 100px);
     top: 60px;
@@ -74,34 +129,36 @@ nav > ul > li ul {
 nav ul {
     list-style-type: none;
     padding: 0 0 0 5px;
-    border-left: 1px solid #ccc;
+    border-left: 1px solid var(--nav-color)
 }
 
 nav ul li {
     padding: 5px 0;
-    color: #d89d9d;
+}
+nav ul li.module {
+    color: var(--nav-module-color);
 }
 
 nav ul li a {
-    color: #b9b9b9;
+    color: var(--nav-color);
     text-decoration: none;
     width: calc(100% - 15px);
     display: block;
 }
 
 nav ul li.active {
-    background-color: #4f3030;
-    border-left: 5px solid #cf4c4c;
+    background-color: var(--nav-active-background-color);
+    border-left: 5px solid var(--nav-active-border-color);
     padding-left: 3px;
 }
 
 nav ul li.active a,
 nav ul li a:hover {
-    color: #f84848;
+    color: var(--nav-active-hover-color);
 }
 
 nav ul li details {
-    color: #f84848;
+    color: var(--nav-details-summary-color)
 }
 
 nav ul li details summary {
@@ -109,7 +166,7 @@ nav ul li details summary {
     position: relative;
     cursor: pointer;
 }
-
+ 
 details summary::after {
     content: '\23F5';
     position: absolute;
@@ -123,15 +180,30 @@ details[open] summary::after {
     content: '\23F6';
 }
 
+/* 
+###########################################################
+#           STYLE ZAWARTOŚCI W DIV # CONTENT              #
+###########################################################
+*/
+
+#content {
+    margin-top: 80px;
+    padding: 10px;
+    background-color: var(--content-background-color);
+    border: 1px solid var(--content-border-color);
+    border-radius: 5px;
+    line-height: 1.8;
+}
+
 #content details {
-    border: 1px solid #631919;
+    border: 1px solid var(--content-border-color);
     padding: 10px;
     margin: 10px 0;
 }
 
 #content details summary {
     font-size: 20px;
-    color: #db8181;
+    color: var(--content-details-summary-color);
     cursor: pointer;
 }
 
@@ -139,33 +211,53 @@ details[open] summary::after {
     content: none;
 }
 
-#content {
-    margin-top: 80px;
-    padding: 10px;
-    background-color: #181818;
-    border: 1px solid #633232;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+/* 
+###########################################################
+#     PRAWE MENU NAWIGACYJNE PO STRONIE DOKUMENTACJI      #
+###########################################################
+*/
+
+nav.sidebar {
+    right: 0;
+    background: transparent;
+}
+
+.indent-h2 {
+    margin-left: 20px;
+}
+
+.indent-h3 {
+    margin-left: 40px;
+}
+
+/* 
+###########################################################
+#      DODATKOWE FORMATOWANIE TEKSTU DLA WYRÓŻNIENIA      #
+###########################################################
+*/
+
+code {
+    background-color: var(--code-background-color);
+    padding: 5px;
     border-radius: 5px;
-    line-height: 1.8;
+    color: var(--code-color);
 }
 
-main {
-    position: relative;
-    left: 17%;
-    width: 60%;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    top: 50px;
-    width: 100%;
-}
+/* 
+###########################################################
+#         STYLIZACJA BLOKÓW KODÓW PROGRAMOWANIA           #
+###########################################################
+*/
 
 pre {
-    background-color: #1f202d;
+    background-color: var(--code-background-color);
     padding: 10px;
     border-radius: 5px;
     overflow-x: auto;
@@ -177,18 +269,30 @@ pre {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--copy-button-background-color);
+    color: var(--copy-button-color);
     border: none;
     padding: 5px;
     cursor: pointer;
     border-radius: 3px;
 }
 
+/* 
+###########################################################
+#   MODYFIKACJA UŁOŻENIA BLOKU MATEMATYCZNEGO W TEKŚCIE   #
+###########################################################
+*/
+
 .katex-display {
     display: inline-block !important;
     margin: 0 !important;
 }
+
+/* 
+###########################################################
+#               ZAKŁADKI Z KONWENTEM                      #
+###########################################################
+*/
 
 [data-tabs] {
     display: flex;
@@ -202,19 +306,39 @@ pre {
     margin: 10px 0;
 }
 
+[data-tabs] > div.active{
+    border: 1px solid var(--tabs-border-color);
+    margin-top: -12px;
+    background-color: var(--tabs-background-color);
+}
+
 [data-tabs] > div.active > * {
     display: block;
 }
-
+[data-tabs] > .tabs b.active {
+    z-index: 2;
+    position: relative;
+    background-color: var(--tabs-background-color);
+    top: 1px;
+}
 [data-tabs] > .tabs > b {
     display: inline-block;
     padding: 10px;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     margin: 10px 0;
-    border: 1px solid #fff;
+    border: 1px solid var(--tabs-border-color);
     cursor: pointer;
     font-size: medium;
+    border-bottom: 2px solid var(--tabs-background-color);
+
 }
+
+/* 
+###########################################################
+#      SPECJALNIE WYRÓŻNIONE FRAGMENTY DOKUMENTU          #
+###########################################################
+*/
 
 [data-hint] {
     padding: 10px;
@@ -223,32 +347,65 @@ pre {
 }
 
 .hint-info {
-    background-color: #254c70;
-    border-left: 16px solid #2196F3;
-    color: #d9d9d9;
+    background-color: var(--hint-info-background-color);
+    border-left: 16px solid var(--hint-info-border-color);
+    color: var(--hint-text-color);
 }
 
 .hint-success {
-    background-color: #2e4e20;
-    border-left: 16px solid #4CAF50;
-    color: #d9d9d9;
+    background-color: var(--hint-success-background-color);
+    border-left: 16px solid var(--hint-success-border-color);
+    color: var(--hint-text-color);
 }
 
 .hint-warning {
-    background-color: #6e6431;
-    border-left: 16px solid #ff9800;
-    color: #d9d9d9;
+    background-color: var(--hint-warning-background-color);
+    border-left: 16px solid var(--hint-warning-border-color);
+    color: var(--hint-text-color);
 }
 
 .hint-danger {
-    background-color: #521a1a;
-    border-left: 16px solid #f44336;
-    color: #d9d9d9;
+    background-color: var(--hint-danger-background-color);
+    border-left: 16px solid var(--hint-danger-border-color);
+    color: var(--hint-text-color);
 }
 
-code {
-    background-color: #272b3b;
-    padding: 5px;
-    border-radius: 5px;
-    color: #d1d1d1;
+/* 
+###########################################################
+#                  STRONA ŁADOWANIA                       #
+###########################################################
+*/
+#loading-doc-page{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--content-background-color);
+    display: flex;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#loading-doc-page > div{
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+#loading-doc-page img{
+    position: relative;
+    top: 143px;
+}
+.loader{
+    border: 16px solid var(--header-background-color);
+    border-top: 16px solid var(--header-color);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kurs programowania C++</title>
+    <title>Dokumentacja</title>
     <link rel="shortcut icon" href="Data/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="Data/styles.css" />
     <link
@@ -14,62 +14,35 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
     />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"
-    ></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js"
-      onload="renderMathInElement(document.body);"
-    ></script>
+  
   </head>
   <body>
     <header>
         <a href="/"><img src="Data/logo.webp" alt="Logo Kursu programowania C++" /></a>
-      <h1>Kurs programowania C++</h1>
+      <h1>Dokumentacja</h1>
     </header>
     <div class="container">
       <nav>
         <ul>
-          <li class="active">
-            <a href="#wprowadzenie">Wstęp i spis treści</a>
-          </li>
-          <li class="module">Moduł 0: Wprowadzenie do kursu</li>
-          <li><a href="#klasy">Klasy</a></li>
-          <li><a href="#dziedziczenie">Dziedziczenie</a></li>
-          <li>
-            <details>
-              <summary>
-                <a href="#polimorfizm">Polimorfizm</a>
-              </summary>
-              <ul>
-                <li><a href="#wirtualne-funkcje">Wirtualne funkcje</a></li>
-                <li>
-                  <a href="#czysto-wirtualne-funkcje"
-                    >Czysto wirtualne funkcje</a
-                  >
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li><a href="#klasy">Klasy</a></li>
-          <li class="module">Moduł 1: Wprowadzenie do kursu</li>
-          <li><a href="#dziedziczenie">Dziedziczenie</a></li>
+          <!-- Wygeneruje się tu menu nawigacyjne bazujące na Pages/_index.md  -->
         </ul>
       </nav>
       <main id="content">
-        <!-- Zawartość będzie tutaj ładowana -->
+        <!-- Zawartość będzie ładować się zawartość plików MarkDown -->
       </main>
       <nav class="sidebar">
         <ul>
-          <li class="active">
-            <a href="#wprowadzenie">Wstęp i spis treści</a>
-          </li>
-          <li><a href="#klasy">Klasy</a></li>
-          <li><a href="#dziedziczenie">Dziedziczenie</a></li>
+          <!-- Wygeneruje się spis treści dokumentu MarkDown chwytając najwyższe znaczniki h1 i h2 -->
         </ul>
       </nav>
+    </div>
+
+    <div id="loading-doc-page">
+      <div>
+        <img src="Data/logo.webp" alt="Logo" />
+        <div class="loader"></div>
+        <p class="loadingMessage">Ładowanie</p>
+      </div>
     </div>
     <footer>
       <p>&copy; 2025 Dokumentacja.</p>
@@ -78,5 +51,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/turndown/dist/turndown.js"></script>
     <script src="Data/script.js"></script>
+    <script
+     
+    src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"
+  ></script>
+  <script
+   
+    src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(content);showLoadingPage(false);"
+  ></script>
   </body>
 </html>

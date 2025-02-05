@@ -1,28 +1,21 @@
-# Wstęp i spis treści
+# Wprowadzenie do dokumentacji
 
-# all
-#### Moduł 0: Wprowadzenie do kursu
+#### Moduł 0: Przykłady
 
-# 0.1 Jak się uczyć i jak zdobywać umiejętności w programowaniu C++
+# Cheat Sheet
 
-# 0.2 Dziedziczenie
+# Struktura projektu
+
+#### Moduł 1: XYZ
 
 <details>
 <summary>
 
-# 0.3 Polimorfizm
+# Dokumentacja projektu
 
 </summary>
 
-# 0.3.1 Wirtualne funkcje
-# 0.3.2 Czysto wirtualne funkcje
+# Dokumentacja script.js
+# Dokumentacja styles.js
 
 </details>
-
-# 0.4 Klasa
-
-
-#### Moduł 1: Wprowadzenie do kursu
-
-# 1.1 Funkcje
-
