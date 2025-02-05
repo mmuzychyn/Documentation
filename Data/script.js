@@ -107,14 +107,12 @@ function loadPage(target) {
             fetch(`Pages/${target}.md`)
               .then((response) => response.text())
               .then((data) => {
-                showLoadingPage(true);
                 // Załadowanie zawartości pliku .md do zmiennej globalnej fileMD
                 fileMD = data;
                 // Wywołanie funkcji generującej stronę
                 setupPage(target);
                 setupNavSidebar();
                 renderMathInElement(content);
-                showLoadingPage(false);
               });
           });
         });
